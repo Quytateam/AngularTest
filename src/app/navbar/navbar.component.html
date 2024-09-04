@@ -42,18 +42,43 @@
           </svg>
         </a>
         <span
+          *ngIf="isLogin"
           class="absolute top-0 right-0 bg-red-500 text-white rounded-full text-xs w-4 h-4 text-center"
           >1</span
         >
       </div>
-      <a href="#" class="text-white hover:text-gray-400">
+      <button
+        *ngIf="!isLogin"
+        (click)="toggleLoginDropdown()"
+        id="menu-login-toggle"
+        href="#"
+        class="text-white hover:text-gray-400"
+      >
         <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
           <path
             d="M12 12c2.67 0 4.6-1.93 4.6-4.6S14.67 2.8 12 2.8 7.4 4.73 7.4 7.4 9.33 12 12 12zm0 2.4c-2.95 0-8.8 1.48-8.8 4.4v1.6h17.6V18.8c0-2.92-5.85-4.4-8.8-4.4z"
           ></path>
         </svg>
-      </a>
+      </button>
     </div>
+
+    <div *ngIf="isDropdownLogin" class="relative hidden lg:block items-center">
+      <div
+        class="absolute top-full right-0 mt-2 w-48 bg-primary opacity-60 p-4 -mr-4 rounded-lg shadow-lg"
+      >
+        <a
+          href="#"
+          class="block text-white hover:text-gray-400 py-2 text-lg underline"
+          >ĐĂNG NHẬP</a
+        >
+        <a
+          href="#"
+          class="block text-white hover:text-gray-400 py-2 text-lg underline"
+          >ĐĂNG KÝ</a
+        >
+      </div>
+    </div>
+
     <div class="relative lg:hidden flex items-center">
       <button
         (click)="toggleDropdown()"
@@ -75,7 +100,6 @@
           ></path>
         </svg>
       </button>
-
       <!-- Dropdown Menu -->
       <div
         *ngIf="isDropdownOpen"
@@ -99,7 +123,7 @@
         <a href="#" class="block text-white hover:text-gray-400 py-2 text-lg"
           >LIÊN HỆ</a
         >
-        <div class="relative mr-4 my-2">
+        <div *ngIf="isLogin" class="relative mr-4 my-2">
           <a href="#" class="text-white hover:text-gray-400 text-lg">
             <svg
               class="h-6 w-6"
@@ -121,13 +145,31 @@
             >1</span
           >
         </div>
-        <a href="#" class="text-white hover:text-gray-400 text-lg">
+        <a
+          *ngIf="isLogin"
+          href="#"
+          class="text-white hover:text-gray-400 text-lg"
+        >
           <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
             <path
               d="M12 12c2.67 0 4.6-1.93 4.6-4.6S14.67 2.8 12 2.8 7.4 4.73 7.4 7.4 9.33 12 12 12zm0 2.4c-2.95 0-8.8 1.48-8.8 4.4v1.6h17.6V18.8c0-2.92-5.85-4.4-8.8-4.4z"
             ></path>
           </svg>
         </a>
+        <div *ngIf="!isLogin">
+          <div>
+            <a
+              href="#"
+              class="block text-white hover:text-gray-400 py-2 text-lg underline"
+              >ĐĂNG NHẬP</a
+            >
+            <a
+              href="#"
+              class="block text-white hover:text-gray-400 py-2 text-lg underline"
+              >ĐĂNG KÝ</a
+            >
+          </div>
+        </div>
       </div>
     </div>
   </nav>
