@@ -1,0 +1,134 @@
+<!-- app.component.html -->
+<header class="">
+  <nav class="bg-main opacity-60 p-4 flex justify-between">
+    <div class="container mx-10 lg:flex justify-between items-center">
+      <!-- Left Menu Items -->
+      <div class="hidden lg:flex space-x-4 xl:gap-14">
+        <a href="#" class="text-white hover:text-gray-400">PHÒNG HỌP</a>
+        <a href="#" class="text-white hover:text-gray-400"
+          >DỊCH VỤ NGHỈ DƯỠNG</a
+        >
+        <a href="#" class="text-white hover:text-gray-400">PHÒNG CO_WORKING</a>
+      </div>
+
+      <!-- Logo -->
+      <div class="flex justify-center items-center">
+        <a class="text-white text-2xl cursor-pointer">G</a>
+      </div>
+
+      <!-- Right Menu Items -->
+      <div class="hidden lg:flex space-x-4 items-center xl:gap-14">
+        <a href="#" class="text-white hover:text-gray-400">VĂN PHÒNG ẢO</a>
+        <a href="#" class="text-white hover:text-gray-400">VĂN PHÒNG DÀI HẠN</a>
+        <a href="#" class="text-white hover:text-gray-400">LIÊN HỆ</a>
+      </div>
+    </div>
+    <div class="hidden lg:flex space-x-4 items-center">
+      <div class="relative">
+        <a href="#" class="text-white hover:text-gray-400">
+          <svg
+            class="h-6 w-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 17h5l-1.405-1.405C18.37 14.37 18 13.695 18 13V7a6 6 0 10-12 0v6c0 .695-.37 1.37-1.595 2.595L3 17h5m7 0a3 3 0 11-6 0h6z"
+            ></path>
+          </svg>
+        </a>
+        <span
+          class="absolute top-0 right-0 bg-red-500 text-white rounded-full text-xs w-4 h-4 text-center"
+          >1</span
+        >
+      </div>
+      <a href="#" class="text-white hover:text-gray-400">
+        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+          <path
+            d="M12 12c2.67 0 4.6-1.93 4.6-4.6S14.67 2.8 12 2.8 7.4 4.73 7.4 7.4 9.33 12 12 12zm0 2.4c-2.95 0-8.8 1.48-8.8 4.4v1.6h17.6V18.8c0-2.92-5.85-4.4-8.8-4.4z"
+          ></path>
+        </svg>
+      </a>
+    </div>
+    <div class="relative lg:hidden flex items-center">
+      <button
+        (click)="toggleDropdown()"
+        id="menu-toggle"
+        class="text-white focus:outline-none"
+      >
+        <svg
+          class="h-6 w-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16m-7 6h7"
+          ></path>
+        </svg>
+      </button>
+
+      <!-- Dropdown Menu -->
+      <div
+        *ngIf="isDropdownOpen"
+        class="absolute top-full right-0 mt-2 max-sm:w-screen w-56 bg-main opacity-60 p-4 -mr-4 rounded-lg shadow-lg"
+      >
+        <a href="#" class="block text-white hover:text-gray-400 py-2"
+          >PHÒNG HỌP</a
+        >
+        <a href="#" class="block text-white hover:text-gray-400 py-2"
+          >DỊCH VỤ NGHỈ DƯỠNG</a
+        >
+        <a href="#" class="block text-white hover:text-gray-400 py-2"
+          >PHÒNG CO_WORKING</a
+        >
+        <a href="#" class="block text-white hover:text-gray-400 py-2"
+          >VĂN PHÒNG ẢO</a
+        >
+        <a href="#" class="block text-white hover:text-gray-400 py-2"
+          >VĂN PHÒNG DÀI HẠN</a
+        >
+        <a href="#" class="block text-white hover:text-gray-400 py-2"
+          >LIÊN HỆ</a
+        >
+        <div class="relative mr-4 my-2">
+          <a href="#" class="text-white hover:text-gray-400">
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 17h5l-1.405-1.405C18.37 14.37 18 13.695 18 13V7a6 6 0 10-12 0v6c0 .695-.37 1.37-1.595 2.595L3 17h5m7 0a3 3 0 11-6 0h6z"
+              ></path>
+            </svg>
+          </a>
+          <span
+            class="absolute -top-2 left-3 bg-red-500 text-white rounded-full text-xs w-4 h-4 text-center"
+            >1</span
+          >
+        </div>
+        <a href="#" class="text-white hover:text-gray-400">
+          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M12 12c2.67 0 4.6-1.93 4.6-4.6S14.67 2.8 12 2.8 7.4 4.73 7.4 7.4 9.33 12 12 12zm0 2.4c-2.95 0-8.8 1.48-8.8 4.4v1.6h17.6V18.8c0-2.92-5.85-4.4-8.8-4.4z"
+            ></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
