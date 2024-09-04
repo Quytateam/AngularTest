@@ -7,7 +7,7 @@ module.exports = {
         xs: "475px",
       },
       colors: {
-        main: "#111827",
+        primary: "#111827",
       },
       backgroundImage: {
         "custom-image":
