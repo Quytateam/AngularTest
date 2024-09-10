@@ -8,6 +8,7 @@ module.exports = {
       },
       colors: {
         primary: "rgb(33,32,37)",
+        card: "#212025",
       },
       backgroundImage: {
         "custom-image":
